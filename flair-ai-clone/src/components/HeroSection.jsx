@@ -7,7 +7,6 @@ export default function HeroSec() {
   useEffect(() => { if (s) { const it = setInterval(() => { sa(false); setTimeout(() => { setI(v => (v + 1) % words.length); sa(true); }, 500); }, 2000); return () => clearInterval(it); } }, [s]);
   
   
-  
   return (
     <main>
       <div className={`hero${u ? " push-up" : ""}`}>
