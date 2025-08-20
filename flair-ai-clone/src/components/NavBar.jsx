@@ -1,14 +1,24 @@
-import logo from "../assets/logo.svg"
+import React, { useEffect, useState } from "react";
+import logo from "../assets/logo.svg";
 
 export default function Navbar() {
+  const [scrolled, setScrolled] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 10);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header>
+    <header className={scrolled ? "scrolled" : ""}>
       <nav className="nv">
         <a href="/" className="lg-lk">
-        <div className="ls">
-          <img src={logo} alt="website logo" className="lg-img" />
-          <h2 className="tt">Flair.ai</h2>
-        </div>
+          <div className="ls">
+            <img src={logo} alt="website logo" className="lg-img" />
+            <h2 className="tt">Flair.ai</h2>
+          </div>
         </a>
         <ul className="rs">
           <li>
@@ -26,5 +36,5 @@ export default function Navbar() {
         </ul>
       </nav>
     </header>
-  )
+  );
 }
