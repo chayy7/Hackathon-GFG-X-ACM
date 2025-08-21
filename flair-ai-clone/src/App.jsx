@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import NavBar from './Components/NavBar'
 import Hero from './Components/HeroSection'
+
 import Screen from './Components/Screen'
 import Carousel from './Components/Carousel'
 import MarketingSection from './Components/MarketingSection'
